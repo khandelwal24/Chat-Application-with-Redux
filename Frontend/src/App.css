@@ -1,0 +1,14 @@
+
+
+body{
+  background-image: url('/IMG.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  backdrop-filter: blur(2.45px);
+}
+
+.ll{
+  scrollbar-width: none;
+}
