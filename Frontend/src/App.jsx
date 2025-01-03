@@ -19,7 +19,7 @@ const App = () => {
 
   useEffect(()=>{
     if(authUser){
-      const sockk = io('http://localhost:1000',{query:{userId:authUser?._id}});
+      const sockk = io('https://chat-application-with-redux.onrender.com',{query:{userId:authUser?._id}});
       dispatch(setSocket(sockk));
       
       sockk.on('getOnlineUsers',(onlineUsersINChat)=>{

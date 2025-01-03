@@ -24,7 +24,7 @@ const MessagePanel = () => {
   const SendMessageHandler = async() => {
     // e.preventDefault();
     try{
-      const res = await axios.post(`http://localhost:1000/api/v1/message/send/${SelectedUser?._id}`,{inputMessage},{headers:{"Content-Type":'application/json'},withCredentials:true});
+      const res = await axios.post(`https://chat-application-with-redux.onrender.com/api/v1/message/send/${SelectedUser?._id}`,{inputMessage},{headers:{"Content-Type":'application/json'},withCredentials:true});
       // console.log("Message Panel wala res : ",res);
       if(res.data.success){
         toast.success(res.data.message);
