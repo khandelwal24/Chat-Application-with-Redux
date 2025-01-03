@@ -12,8 +12,8 @@ import { app, io, server } from './Socket/Socket.js'
 // const app = express();
 
 // All middleWares..
+// app.use(express.static(path.join(path.resolve(),'public')));
 app.use(express.json());
-app.use(express.static(path.join(path.resolve(),'public')));
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(cors({
@@ -22,15 +22,24 @@ app.use(cors({
     methods:['GET','POST','PUT','DELETE']
 }))
 
-app.get('/',(req,res)=>{
-    res.json({Message:'Server Established Successfully Madarchod'})
-})
+// app.get('/',(req,res)=>{
+//     res.json({Message:'Server Established Successfully Madarchod'})
+// })
 
 
 // Usser - Routes here...
 app.use('/api/v1/user',userR);
 // Mmessage - Route here...
 app.use('/api/v1/message',MessageR);
+
+// Deployment Task...
+
+const _dirname = path.resolve();
+app.use(express.static(path.join(_dirname,'/Frontend/dist')));
+app.get('*',(_,res)=>{
+    res.sendFile(path.resolve(_dirname,"Frontend","dist","index.html"));
+});
+
 
 
 mongoose.connect(process.env.Mongo_Url,{dbName:'Chat_Application'}).then(()=>console.log('MongoDB connected')).catch(()=>console.log('Errro Occured'));

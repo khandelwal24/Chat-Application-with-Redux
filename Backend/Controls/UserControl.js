@@ -110,7 +110,7 @@ export const sendMessage = async(req,res) =>{
         const senderId = req.id;
         const receiverId = req.params.id;
         const {inputMessage:message} = req.body;
-        console.log(message);
+        // console.log(message);
         
          // Kyuki Message Panel mae "const [inputMessage,setInputMessage] = useState('');" yeh use kiye hai issliye yaha bhi same naam aanaa chaiye nhi toh error marege...
 
@@ -148,8 +148,8 @@ export const getAllMesages = async(req,res)=>{
         const senderId = new mongoose.Types.ObjectId(req.id);
         const receiverId = new mongoose.Types.ObjectId(req.params.id);
 
-        console.log("Sender Id",senderId)
-        console.log("Receiver Id",receiverId)
+        // console.log("Sender Id",senderId)
+        // console.log("Receiver Id",receiverId)
 
         const convo = await Convo_Model.findOne({
             participants:{$all:[senderId,receiverId]}

@@ -13,7 +13,7 @@ export const getReceiverSocketId = (receivedId) =>{
 const userSockMap = {}; // {userId--->SockId};
 
 io.on('connection',(sock)=>{
-    console.log('User Connected',sock.id);
+    // console.log('User Connected',sock.id);
     const userId = sock.handshake.query.userId;
     if(userId) userSockMap[userId] = sock.id;
     
@@ -21,7 +21,7 @@ io.on('connection',(sock)=>{
     io.emit('getOnlineUsers',Object.keys(userSockMap));
 
     sock.on('disconnect',()=>{
-        console.log('User Disconnected',sock.id);
+        // console.log('User Disconnected',sock.id);
         delete userSockMap[userId];
         io.emit('getOnlineUsers',Object.keys(userSockMap));
     });

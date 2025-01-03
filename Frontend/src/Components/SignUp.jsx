@@ -32,7 +32,7 @@ const SignUp = () => {
 
   const onSubmitHandler = async (e) =>{
     e.preventDefault();
-    console.log(info);
+    // console.log(info);
     try{
       const res = await axios.post('http://localhost:1000/api/v1/user/register',info,{headers:{"Content-Type":'application/json'}, withCredentials:true})
       if(res.data.success){
