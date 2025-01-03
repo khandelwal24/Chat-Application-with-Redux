@@ -34,7 +34,7 @@ const SignUp = () => {
     e.preventDefault();
     console.log(info);
     try{
-      const res = await axios.post('https://chat-application-with-redux-backend.onrender.com/api/v1/user/register',info,{headers:{"Content-Type":'application/json'}, withCredentials:true})
+      const res = await axios.post('http://localhost:1000/api/v1/user/register',info,{headers:{"Content-Type":'application/json'}, withCredentials:true})
       if(res.data.success){
         toast.success(res.data.message);
         setInfo({

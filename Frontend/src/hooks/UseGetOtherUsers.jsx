@@ -12,7 +12,7 @@ const UseGetOtherUsers = () => {
   useEffect(()=>{
     const fetchOtherUser = async()=>{
         try{
-            const res = await axios.get(`https://chat-application-with-redux-backend.onrender.com/api/v1/user/getOtherUsers`,{headers:{"Content-Type":'application/json'},withCredentials:true});
+            const res = await axios.get(`http://localhost:1000/api/v1/user/getOtherUsers`,{headers:{"Content-Type":'application/json'},withCredentials:true});
             // console.log(res.data.OtherUserId);
             if(res.data.success){
                 dispatch(setOtherUsersss(res.data.OtherUserId))
