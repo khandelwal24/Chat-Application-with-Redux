@@ -17,7 +17,7 @@ const Sidebar = () => {
 
   const logOutHandler = async(e) =>{
     try{
-      const res = await axios.get('http://localhost:1000/api/v1/user/logout',{headers:{"Content-Type":'application/json'},withCredentials:true})
+      const res = await axios.get('https://chat-application-with-redux-backend.onrender.com/api/v1/user/logout',{headers:{"Content-Type":'application/json'},withCredentials:true})
       if(res.data.success){
         dispatch(setAuthUser(null));
         toast.success(res.data.message);

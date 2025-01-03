@@ -14,7 +14,6 @@ const Home = () => {
       <MessagePanel/>
     </div>
     </div>
-    <p className='text-white bg-transparent backdrop-blur-md w-full fixed bottom-0 px-3 py-1 font-mono md:text-sm text-xs md:text-left text-center'>Created with love by <a href='https://www.instagram.com/khandelwal0024/'>@khandelwal0024</a></p>
     </div>
   )
 }

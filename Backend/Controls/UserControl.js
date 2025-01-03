@@ -110,10 +110,10 @@ export const sendMessage = async(req,res) =>{
         const senderId = req.id;
         const receiverId = req.params.id;
         const {inputMessage:message} = req.body;
+        console.log(message);
         
          // Kyuki Message Panel mae "const [inputMessage,setInputMessage] = useState('');" yeh use kiye hai issliye yaha bhi same naam aanaa chaiye nhi toh error marege...
 
-        console.log(message);
 
         let gotConvo = await Convo_Model.findOne({
             participants:{$all:[senderId,receiverId]}

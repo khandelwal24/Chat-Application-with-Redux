@@ -14,7 +14,7 @@ const UseGetMessage = () => {
         const fetchMessage = async() =>{
             try{
                 axios.defaults.withCredentials=true;
-                const res = await axios.get(`http://localhost:1000/api/v1/message/getAllMessage/${SelectedUser?._id}`);
+                const res = await axios.get(`https://chat-application-with-redux-backend.onrender.com/api/v1/message/getAllMessage/${SelectedUser?._id}`);
                 // console.log(res);
                 if(res.data.success){
                     // toast.success(res.data.message);
@@ -31,27 +31,6 @@ const UseGetMessage = () => {
         fetchMessage();
 
     },[SelectedUser])
-
-
-
-
-
-
-
-
-//     // useEffect(()=>{
-//     //     const fetchMessage = async()=>{
-//     //         const res = await axios.get('http://localhost:1000/api/v1/message/getAllMessage/676c35a13ad98a147c709422',{headers:{"Content-Type":'application/json'},withCredentials:true});
-//     //         console.log(res);
-//     //     }
-
-//     //     fetchMessage();
-
-//     // })
-
-
-
-
 
 
 }

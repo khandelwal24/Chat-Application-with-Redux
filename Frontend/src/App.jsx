@@ -16,10 +16,10 @@ const App = () => {
   const {authUser} = useSelector(store=>store.user);
   const {socket} = useSelector(store=>store.Sockett);
   const dispatch = useDispatch();
-
+// https://chat-application-with-redux-backend.onrender.com
   useEffect(()=>{
     if(authUser){
-      const sockk = io('http://localhost:1000',{query:{userId:authUser?._id}});
+      const sockk = io('https://chat-application-with-redux-backend.onrender.com',{query:{userId:authUser?._id}});
       dispatch(setSocket(sockk));
       
       sockk.on('getOnlineUsers',(onlineUsersINChat)=>{
@@ -47,6 +47,7 @@ const App = () => {
           <Route path='/' element={<ProtectedRoute> <Home/></ProtectedRoute>}/>
         </Routes>
       </BrowserRouter>
+      <p className='text-white bg-transparent backdrop-blur-md w-full fixed bottom-0 px-3 py-1 font-mono md:text-sm text-xs md:text-left text-center'>Created with &#x2764;  by <a href='https://www.instagram.com/khandelwal0024/'>@khandelwal0024</a></p>
     </div>
   )
 }

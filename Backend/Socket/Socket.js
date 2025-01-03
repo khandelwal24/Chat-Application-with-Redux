@@ -4,14 +4,13 @@ import http from 'http'
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server,{cors:{origin:'http://localhost:5173', methods:['GET','POST']}})
+const io = new Server(server,{cors:{origin:'https://soft-froyo-93f80f.netlify.app/', methods:['GET','POST']}})
 
 export const getReceiverSocketId = (receivedId) =>{
     return userSockMap[receivedId];
 }
 
 const userSockMap = {}; // {userId--->SockId};
-
 
 io.on('connection',(sock)=>{
     console.log('User Connected',sock.id);
