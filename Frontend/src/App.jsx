@@ -16,7 +16,7 @@ const App = () => {
   const {authUser} = useSelector(store=>store.user);
   const {socket} = useSelector(store=>store.Sockett);
   const dispatch = useDispatch();
-// https://chat-application-with-redux-backend.onrender.com
+  
   useEffect(()=>{
     if(authUser){
       const sockk = io('https://chat-application-with-redux-backend.onrender.com',{query:{userId:authUser?._id}});
