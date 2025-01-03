@@ -4,7 +4,7 @@ import http from 'http'
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server,{cors:{origin:'https://chats247.netlify.app/', methods:['GET','POST']}})
+const io = new Server(server,{cors:{origin:'https://chats247.netlify.app', methods:['GET','POST']}})
 
 export const getReceiverSocketId = (receivedId) =>{
     return userSockMap[receivedId];
